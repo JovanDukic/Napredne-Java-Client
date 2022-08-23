@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div class="container">
+
+        <div class="title">Users</div>
+
+        <div class="toolbar">
+            <div class="ambulanceFilter">
+                <div>
+                    <label for="search">Search:</label>
+                </div>
+                <div class="search">
+                    <input type="text" name="search" id="search" (change)="search()" [formControl]="searchField">
+                </div>
+                <div class="filter">
+                    <select id="filterValue" [formControl]="searchType">
+                        <option value="USERNAME">Username</option>
+                        <option value="FIRSTNAME">Firstname</option>
+                        <option value="LASTNAME">Lastname</option>
+                        <option value="AGE">Age</option>
+                        <option value="GENDER">Gender</option>
+                        <option value="COUNTRY">Country</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="data">
+            <table id="table">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Country</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let user of users" (click)="moveToCheckupsPage(user)">
+                        <td>{{user.id}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.firstName}}</td>
+                        <td>{{user.lastName}}</td>
+                        <td>{{user.age}}</td>
+                        <td>{{user.gender}}</td>
+                        <td>{{user.countryDto.countryName}}</td>
+                        <td><a class="delete" (click)="deleteUser(user, $event)">DELETE</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div class="container">
+
+        <div class="title">Hello there!</div>
+
+        <form [formGroup] = "registerForm" action="#"  id="registrationForm" (ngSubmit) = "register()">
+            <div class="content">
+                <label for="username">Username:</label>
+                <input [formControlName] = "'username'" type="text" name="username" id="username">
+
+                <label for="password">Password:</label>
+                <input [formControlName] = "'password'" type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+
+                <label for="email">Email:</label>
+                <input [formControlName] = "'email'" type="text" name="email" id="email">
+
+                <label for="phone">Phone:</label>
+                <input [formControlName] = "'phone'" type="text" name="phone" id="phone">
+
+                <label for="firstname">Firstname:</label>
+                <input [formControlName] = "'firstName'" type="text" name="firstname" id="firstname">
+
+                <label for="lastname">Lastname:</label>
+                <input [formControlName] = "'lastName'" type="text" name="lastname" id="lastname">
+
+                <label for="age">Age:</label>
+                <input [formControlName] = "'age'" type="text" name="age" id="age">
+
+                <label for="gender">Gender:</label>
+                <select [formControlName] = "'gender'" name="gender" id="gender">
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                </select>
+
+                <label for="country">Country:</label>
+                <select [formControlName] = "'country'" name="country" id="country">
+                    <option *ngFor="let country of countries" value="{{country.id}}">{{country.countryName}}</option>
+                </select>
+
+                <div class="submit-div">
+                    <input type="submit" name="submit" id="submit" value="REGISTER" onsubmit="">
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

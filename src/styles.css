@@ -1,1 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+    font-family: sans-serif;
+    font-weight: 100;
+    min-width: 100%;
+    min-height: 100vh;
+    padding-bottom: 1%;
+}
+
+.container {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    justify-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #414e86;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar a {
+    font-size: 1.3em;
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #6f48b9;
+}
+
+.title {
+    margin-top: 5%;
+    margin-bottom: 7%;
+    text-align: center;
+    font-size: 6em;
+    color: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+#submit {
+    background-color: rgba(16, 15, 97, 0.801);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: none;
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    padding: 5px 15px;
+    cursor: pointer;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#submit:hover {
+    background-color: rgba(97, 15, 15, 0.801);
+}
+
+input[type="text"] {
+    all: initial;
+    font-family: sans-serif;
+    font-weight: 100;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: white;
+    -webkit-border-radius: 10px;
+    font-size: 1.1em;
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+input[type="text"]:focus {
+    border: 3px solid rgba(73, 12, 92, 0.801);
+}
+
+input[type="password"] {
+    all: initial;
+    font-family: sans-serif;
+    font-weight: 100;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: white;
+    -webkit-border-radius: 10px;
+    font-size: 1.1em;
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+input[type="password"]:focus {
+    border: 3px solid rgba(73, 12, 92, 0.801);
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div class="container">
+
+        <div class="title">Checkup Form</div>
+
+        <form [formGroup]="checkupForm" action="#" id="checkupForm" (ngSubmit) = "createCheckup()">
+            <div class="content">
+
+                <div class="part-2">
+                    <div class="test-part">
+                        <label for="ambulance">Ambulance:</label>
+                    </div>
+
+                    <select [formControlName] = "'ambulance'" name="ambulance" id="ambulance" class="doctorSelect">
+                        <option *ngFor="let ambulance of ambulances" value="{{ambulance.id}}">{{ambulance.ambulanceName}}</option>
+                    </select>
+                </div>
+
+                <div class="part-2">
+                    <div class="test-part">
+                        <label for="doctor">Doctor:</label>
+                    </div>
+
+                    <select [formControlName] = "'doctor'" name="doctor" id="doctor" class="doctorSelect">
+                        <option *ngFor="let doctor of doctors" value="{{doctor.id}}">{{doctor.firstName}} {{doctor.lastName}}</option>
+                    </select>
+                </div>
+
+                <div class="part">
+                    <input type="submit" name="button" id="submit" value="CREATE CHECKUP">
+                </div>
+
+
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

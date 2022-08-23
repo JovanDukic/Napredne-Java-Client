@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div class="container">
+
+        <div class="title">CovidTest Form</div>
+
+        <form [formGroup] = "testForm" action="#" id="testForm" (ngSubmit) = "createCovidTest()">
+            <div class="content">
+
+                <div class="part-1">
+                    <div class="test-part">
+                        <label>Test type:</label>
+                    </div>
+
+                    <div class="test-part">
+                        <label for="pcr">pcr-test</label>
+                        <input [formControlName] = "'testType'" type="radio" name="testType" id="pcr" value="PCR" [(ngModel)]="radioSelected">
+                    </div>
+
+                    <div class="test-part">
+                        <label for="quick">quick-test</label>
+                        <input [formControlName] = "'testType'" type="radio" name="testType" id="quick" value="QUICK">
+                    </div>
+                </div>
+
+                <div class="part">
+                    <input type="submit" name="button" id="submit" value="CREATE TEST">
+                </div>
+
+
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

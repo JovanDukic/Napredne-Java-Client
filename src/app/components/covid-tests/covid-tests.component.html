@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div class="container">
+
+        <div class="title">Covid Tests</div>
+
+        <div class="toolbar">
+            <div class="ambulanceFilter">
+                <div>
+                    <label for="search">Search:</label>
+                </div>
+                <div class="search">
+                    <input type="text" name="search" id="search" (change)="search()" [formControl]="searchField">
+                </div>
+                <div class="filter">
+                    <select id="filterValue" [formControl]="searchType">
+                        <option value="Test type">Test type</option>
+                        <option value="Result">Result</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="data">
+            <table id="table">
+
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Checkup Id</th>
+                        <th>Date</th>
+                        <th>Test type</th>
+                        <th>Result</th>
+                        <th *ngIf="authenticationService.isAdmin()">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let covidTest of covidTests">
+                        <td>{{covidTest.id}}</td>
+                        <td>{{covidTest.checkupDto.id}}</td>
+                        <td>{{pipe.transform(covidTest.date, 'MMM d, y, h:mm:ss a')}}</td>
+                        <td>{{covidTest.testType}}</td>
+                        <td>{{covidTest.result}}</td>
+                        <td *ngIf="authenticationService.isAdmin()"><a class="delete" (click)="deleteCovidTest(covidTest, $event)">DELETE</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

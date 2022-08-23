@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<body>
+
+    <div class="container">
+
+        <div class="title">Welcome back!</div>
+
+        <form [formGroup] = "loginForm" action="#" id="loginForm" (ngSubmit) = "login()">
+            <div class="content">
+                <label for="username">Username:</label>
+                <input [formControlName] = "'username'" type="text" name="username" id="username">
+                <label for="password">Password:</label>
+                <input [formControlName] = "'password'" type="password" name="password" id="password">
+
+                <div class="submit-div">
+                    <input type="submit" name="submit" id="submit" value="LOGIN">
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

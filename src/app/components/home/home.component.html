@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <div class="container">
+
+        <div class="title">Checkups</div>
+
+        <div class="toolbar">
+            <div class="ambulanceFilter">
+                <div>
+                    <label for="search">Search:</label>
+                </div>
+                <div class="search">
+                    <input type="text" name="search" id="search" (change)="search()" [formControl]="searchField">
+                </div>
+                <div class="filter">
+                    <select id="filterValue" [formControl]="searchType">
+                        <option value="Doctor">Doctor</option>
+                        <option value="Ambulance">Ambulance</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="data">
+            <table id="table">
+
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Date</th>
+                        <th>Doctor</th>
+                        <th>Ambulance</th>
+                        <th *ngIf="authenticationService.isAdmin()">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let checkup of checkups" (click)="moveToCovidTestPage(checkup)">
+                        <td>{{checkup.id}}</td>
+                        <td>{{pipe.transform(checkup.date, 'MMM d, y, h:mm:ss a')}}</td>
+                        <td>{{checkup.doctorDto.firstName}} {{checkup.doctorDto.lastName}}</td>
+                        <td>{{checkup.ambulanceDto.ambulanceName}}</td>
+                        <td *ngIf="authenticationService.isAdmin()"><a class="delete" (click)="deleteCheckup(checkup, $event)">DELETE</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

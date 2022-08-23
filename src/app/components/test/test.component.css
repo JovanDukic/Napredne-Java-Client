@@ -1,0 +1,65 @@
+.content {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-size: 1.5em;
+    color: #fff;
+    align-self: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 3%;
+}
+
+.title {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+select {
+    background-color: rgba(30, 6, 77, 0.801);
+    width: 200px;
+    height: 70px;
+    font-size: 1em;
+    color: #fff;
+    padding: 10px;
+}
+
+option {
+    background-color: rgba(6, 13, 77, 0.801);
+}
+
+input[type=radio] {
+    margin-left: 3%;
+    width: 20px;
+    height: 20px;
+}
+
+.part-1 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: space-evenly;
+    padding: 3%;
+}
+
+.part-2 {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    justify-content: center;
+    padding: 3%;
+}
+
+.test-part {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 70px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
